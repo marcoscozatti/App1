@@ -19,7 +19,19 @@ namespace App1
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            con.AbrirCon();
+            Button btnConn = FindViewById<Button>(Resource.Id.btnConecta);
+            TextView txtRes = FindViewById<TextView>(Resource.Id.txtResultado);
+            TextView txtUsu = FindViewById<TextView>(Resource.Id.txtUsuario);
+            TextView txtPass = FindViewById<TextView>(Resource.Id.txtSenha);
+
+            btnConn.Click += delegate
+            {
+                con.AbrirCon();
+                txtRes.Text = "Conectado!!!";
+            };
+
+
+           
 
 
 
@@ -29,6 +41,12 @@ namespace App1
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            
         }
+        
+
     }
+
 }
+

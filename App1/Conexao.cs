@@ -17,8 +17,7 @@ namespace App1
 	{
 		public string conec = "SERVER=hipnoclinica.com.br; DATABASE=hipnoc08_BDXamarin; UID=hipnoc08_xama01; PWD=y3x.bmw9; PORT=3306";
 		public MySqlConnection con = null;
-		//"SERVER=hipnoclinica.com.br;DATABASE=hipnoc08_BDXamarin; UID=hipnoc08_xama01; PWD=y3x.bmw9; PORT=3306";
-
+		
 
 		public void AbrirCon()
 		{
@@ -27,6 +26,7 @@ namespace App1
 				con = new MySqlConnection(conec);
 				con.Open();
 				Toast.MakeText(Application.Context, "Conexão efetuada com sucesso!", ToastLength.Long).Show();
+				
 			}
 			catch (Exception ex)
 			{
